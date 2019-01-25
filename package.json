@@ -1,0 +1,8 @@
+{
+  "name": "string-blacklist",
+  "version": "0.1.0",
+  "description": "Tool for checking a string against a blacklist",
+  "main": "index.js",
+  "author": "Douglas Wittnebert",
+  "license": "MIT"
+}
