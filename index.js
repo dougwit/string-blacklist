@@ -31,7 +31,7 @@ const _buildLookahead = string => {
 
 const Blacklist = () => {
   let _regexString = ''
-  let _regex
+  let _regex = null
   let _blacklist = {}
 
 
@@ -54,10 +54,25 @@ const Blacklist = () => {
 
   const _getRegexString = () => _regexString
 
+  const _remove = (term) => {
+    if (_blacklist[term]) {
+      _regexString = _regexString.replace(_blacklist[term], '')
+      delete _blacklist[term]
+
+      if (!Object.keys(_blacklist).length) {
+        _regexString = ''
+        _regex = null
+      } else {
+        _regex = new RegExp(_regexString)
+      }
+    }
+  }
+
   return {
     add: _add,
     check: _check,
-    getRegexString: _getRegexString
+    getRegexString: _getRegexString,
+    remove: _remove
   }
 }
 
