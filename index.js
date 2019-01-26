@@ -50,8 +50,6 @@ const Blacklist = () => {
     _regex = new RegExp(_regexString)
   }
 
-  const _check = (term) => (!_regex || _regex.test(term))
-
   const _getRegexString = () => _regexString
 
   const _remove = (term) => {
@@ -68,11 +66,13 @@ const Blacklist = () => {
     }
   }
 
+  const _validate = (term) => (!_regex || _regex.test(term))
+
   return {
     add: _add,
-    check: _check,
     getRegexString: _getRegexString,
-    remove: _remove
+    remove: _remove,
+    validate: _validate
   }
 }
 
