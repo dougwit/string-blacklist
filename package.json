@@ -1,7 +1,7 @@
 {
   "name": "string-blacklist",
   "version": "0.1.0",
-  "description": "Tool for checking a string against a blacklist",
+  "description": "Tool for checking if a string contains blacklisted words",
   "main": "index.js",
   "author": "Douglas Wittnebert",
   "license": "MIT"
